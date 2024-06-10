@@ -290,7 +290,9 @@ section {
     justify-content: space-around;
     gap: 1rem;
 }
-
+.card{
+    width: 18rem;
+}
 .card-img-top{
     width: 100%;
     aspect-ratio: 1;
@@ -548,6 +550,147 @@ img[alt="aboutImage1"]{
     color: var(--primary);
 }
 
+/*---------------------------------------------- Womens Page --------------------------------------------*/
+.womensBannerImage{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner23.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+#womensBanner{
+    position: relative;
+    z-index: 0;
+}
+
+.womensOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Grey color with 50% opacity */
+    z-index: 1; /* Ensure it's above the background content */
+}
+
+.womensText{
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 2;
+    margin: 13rem auto 13rem;
+    width: 48vw;
+}
+
+.womensText p{
+    font-size: 1.5rem;
+}
+
+.womensHeading{
+    z-index: 2;
+    font-family: "Inria Serif", serif;
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.womensFilterSection{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.womensLeft{
+    width: 30vw;
+    text-align: left;
+}
+
+:is(.my-navbar) {
+    background-color: var(--bgHeaderFooter);
+}
+  
+
+.womensLeft h1{
+    font-family: "Inria Serif", sans-serif;
+    margin-left: 1rem; 
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.womensRight{
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.womensLeft .navbar{
+    margin-top: 2rem;
+    margin-left: 0rem;
+    font-family: "Lato", sans-serif;
+}
+.womensLeft .navbar-brand {
+    margin-right: 10rem;
+}
+
+.womensLeft .nav-link{
+    font-family: "Lato", sans-serif;
+}
+
+.btnWomensSubmit{
+    border: 1px solid var(--secondary);
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border-radius: 0.4rem;
+    font-size: "Lato", sans-serif;
+    padding : 0.5rem 1.2rem;
+}
+
+.womensRight .form-control{
+    border: 1px solid var(--alternative);
+    width: 20vw;
+}
+
+.womensRight .form-control:hover{
+    border: 1px solid var(--alternative);
+}
+
+.womensRight .form-control:focus{
+    border: 1px solid var(--alternative);
+    box-shadow: none;
+}
+
+.womensRight input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background: url("data:image/svg+xml;utf8,<svg fill='%23121525' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89a1,1,0,1,0,1.41,1.41L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12l4.89-4.89A1,1,0,0,0,18.3,5.71Z'/></svg>") no-repeat center center / 100% auto;
+  }
+
+  .womensRight input::placeholder{
+    font-style: italic;
+  }
+
+.womensFilterSection .offcanvas{
+    background-color: var(--bgHeaderFooter);
+}
+
+/* Override styles for the close button when it is pressed */
+.btn-close:active,
+.btn-close:focus {
+    box-shadow: none; /* Removes any box-shadow effect */
+    background-color: transparent; /* Sets the background color to transparent */
+    outline: none; /* Removes the outline */
+    /* Add any other properties that need to be overridden */
+}
+
+.btnSort{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+}
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
@@ -756,6 +899,28 @@ img[alt="aboutImage1"]{
     font-size: 1.2rem;
 }
 
+/*----------------------------------------- Womens Page Responsive ---------------------------------------------------*/
+/*Banner Section*/
+.womensText {
+    width: 100%;
+    margin: 10rem auto 10rem;
+}
+
+.womensHeading{
+    font-size: 3rem;
+}
+
+.womensIntro{
+    font-size: 1rem;
+}
+
+#womensFilter{
+    display: none;
+}
+
+#womensProducts{
+    display: none;
+}
     
      /* Footer Section */
 .footer{
