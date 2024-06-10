@@ -712,6 +712,14 @@ img[alt="aboutImage1"]{
     border: 1px solid var(--secondary);
 }
 
+/*---------------------------------------------- Mens Page --------------------------------------------*/
+.mensBannerImage{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner11.jpg");
+    background-size: cover;
+    background-position: center;  
+}
+
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
 {

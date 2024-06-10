@@ -127,6 +127,105 @@ let products = JSON.parse(localStorage.getItem('products'))
                 Amount: 1000,
                 gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/SerpentineChainBracelet.jpg"
+            },
+            {
+                id: 13,
+                productName: "Curb Chain Bracelet",
+                category: "Bracelets",
+                Material: "Oxidized Sterling Silver",
+                Amount: 900,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensCurbChainBracelet.jpg"
+            },
+            {
+                id: 14,
+                productName: "Curb Necklace",
+                category: "Necklaces",
+                Material: "Titanium",
+                Amount: 1000,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensCurbNecklace.jpg"
+            },
+            {
+                id: 14,
+                productName: "Flat Curb Chain Bracelet",
+                category: "Bracelets",
+                Material: "14k Yellow Gold",
+                Amount: 1300,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensFlatCurbChainBracelet.jpeg"
+            },
+            {
+                id: 15,
+                productName: "Flat Curb Chain Necklace",
+                category: "Necklaces",
+                Material: "14k Yellow Gold",
+                Amount: 1500,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensFlatCurbChainNecklace.jpg"
+            },
+            {
+                id: 16,
+                productName: "Smooth Band",
+                category: "Rings",
+                Material: "Black Titanium",
+                Amount: 550,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensSmoothBand.jpg"
+            },
+            {
+                id: 17,
+                productName: "Gemstone Beaded Bracelet",
+                category: "Bracelets",
+                Material: "Black Agate, Sterling Silver",
+                Amount: 500,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensGemstoneBeadedBracelet.jpg"
+            },
+            {
+                id: 18,
+                productName: "Round Box Chain Necklace",
+                category: "Necklaces",
+                Material: "14k Yellow Gold",
+                Amount: 1500,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensRoundBoxChainNecklace.jpg"
+            },
+            {
+                id: 19,
+                productName: "Square Box Chain Bracelet",
+                category: "Bracelets",
+                Material: "Sterling Silver",
+                Amount: 900,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensSquareBoxChainBracelet.jpg"
+            },
+            {
+                id: 20,
+                productName: "Square Signet Ring",
+                category: "Rings",
+                Material: "Sterling Silver",
+                Amount: 1000,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/SquareSignetRing.jpg"
+            },
+            {
+                id: 20,
+                productName: "Gemstone Beaded Bracelet",
+                category: "Bracelets",
+                Material: "Sterling Silver, Tiger Eye",
+                Amount: 300,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/GemstoneBeadedBracelet.jpg"
+            },
+            {
+                id: 21,
+                productName: "Bold Round Signet Ring",
+                category: "Rings",
+                Material: "Sterling Silver",
+                Amount: 400,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensBoldRoundSignetRing.jpg"
             }
         ]  
     )

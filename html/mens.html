@@ -48,6 +48,72 @@
         </div>
       </nav>
 
+      <main>
+        <section class="container-fluid" id="womensBanner">
+          <div class="row">
+            <div class="womensOverlay"></div>
+            <div class="mensBannerImage">
+              <div class="womensText">
+                <div class="womensHeading text-white">Men’s</div>
+                <p class="text-white womensIntro">Men's rings, bracelets & necklaces, for his everyday. A collection
+                  for the friends, best friends, and partners in our lives.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid" id="womensFilter">
+          <div class="row">
+            <div class="womensFilterSection">
+              <div class="womensLeft">
+                <h1>ALL PRODUCTS</h1>
+                <nav class="navbar my-navbar">
+                  <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand text-black" href="#">FILTER BY CATEGORY</a>
+                   
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENS CATEGORIES</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Bracelets</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Necklaces</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Rings</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+
+              </div>
+              <div class="womensRight">
+                <form class="d-flex mt-3 formMobile" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search by product name" aria-label="Search" searchProduct>
+                  <button class="btnWomensSearch" type="search">SEARCH</button>
+                </form>
+                <button type="button" class="btnSort text-white" sorting>PRICE: LOW TO HIGH</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container-fluid" id="womensProducts">
+          <div class="row womensProductsSection" ourStore>
+          </div>
+        </section>
+      </main>
+
       <footer class="container-fluid" id="footer">
         <div class="row footer">
           <div class="leftSection">
