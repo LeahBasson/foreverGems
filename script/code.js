@@ -17,22 +17,25 @@ let products = JSON.parse(localStorage.getItem('products'))
             category: "Ring",
             Material: "Gold",
             Amount: 1000,
+            gender: "Woman",
             img_url: "https://leahbasson.github.io/MyImages/jsProject/domeFigureSlimRing.jpg"
             },
             {
                 id: 2,
                 productName : "Chunky Silver",
-                category: "Bracelet",
+                category: "Bracelets",
                 Material: "Silver",
                 Amount: 300,
+                gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/LayeredOpalNecklace.jpg"
             },
             {
                 id: 3,
                 productName: "Chain Necklace",
-                category: "Necklace",
+                category: "Necklaces",
                 Material: "Gold",
                 Amount: 600,
+                gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/PearlCharmNecklace.jpg"
             },
             {
@@ -41,6 +44,7 @@ let products = JSON.parse(localStorage.getItem('products'))
                 category: "Earrings",
                 Material: "Pearls, Gold",
                 Amount: 300,
+                gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/TubeMediumHoops.jpg"
             },
             {
@@ -49,7 +53,17 @@ let products = JSON.parse(localStorage.getItem('products'))
                 category: "Earrings",
                 Material: "Gold, Diamond",
                 Amount: 500,
+                gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/AnchorChainBracelet.jpg"
+            },
+            {
+                id: 6,
+                productName: "Black Onyx Square Signet Ring",
+                category: "Rings",
+                Material: "14k Yellow Gold, Black Onyx",
+                Amount: 1200,
+                gender: "Man",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/MensBlackOnyxSquareSignetRing.jpg"
             }
         ]  
     )
@@ -61,7 +75,7 @@ function recentProducts(){
     console.log(latestProducts);
     latestProducts.forEach(product => {
         wrapper.innerHTML += `
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img src="${[product.img_url]}" class="card-img-top" alt="${product.productName}">
             <div class="card-body">
                 <h5 class="card-title">${product.productName}</h5>
