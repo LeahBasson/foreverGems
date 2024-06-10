@@ -1,3 +1,3 @@
 // Current year
 document.querySelector('[currentYear]').textContent =
-    new Date().getUTCFullYear()
+    new Date().getUTCFullYear()  
