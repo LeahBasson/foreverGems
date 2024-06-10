@@ -426,6 +426,128 @@ img[alt="footerLogo"]{
     font-size: 1.2rem;
 }
 
+/*------------------------------------------------------- About Page --------------------------------------------------------------------------- */
+.aboutBannerImage{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner5.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+#aboutBanner{
+    position: relative;
+    z-index: 0;
+}
+
+.aboutOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Grey color with 50% opacity */
+    z-index: 1; /* Ensure it's above the background content */
+}
+
+.aboutText{
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 2;
+    margin: 12rem auto 12rem;
+}
+
+.aboutHeading{
+    z-index: 2;
+    font-family: "Inria Serif", serif;
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.welcome{
+    margin-top: 1rem;
+    z-index: 2;
+    font-size: 2.2rem;
+}
+
+.intro{
+    font-size: 1.2rem;
+}
+
+/* Our Mission Section */
+.ourMissionContainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 20rem;
+}
+
+.ourMissionFirst{
+    width: 38vw;
+    text-align: left;
+}
+
+.ourMissionFirst p {
+    margin-left: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.3rem;
+}
+
+img[alt="aboutImage1"]{
+    width: 30vw;
+    border: 1px solid var(--alternative);
+    margin-top: 3rem;
+}
+
+/* Our promise section */
+.ourPromiseSection{
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    margin-top: 1rem;
+}
+
+.promise{
+    width: 17vw;
+}
+
+.promise img{
+    width: 10vw;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.promise p {
+    margin-top: 1rem;
+    color: var(--primary);
+}
+
+/* Craftsmanship Section */
+.craftsmanshipContainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.block1{
+    width: 35vw;
+    margin-top: 3rem;
+    border: 1px solid var(--alternative);
+}
+
+.block2{
+    width: 40vw;
+}
+
+.block2 p{
+    text-align: left;
+    margin-left: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
@@ -552,6 +674,89 @@ img[alt="footerLogo"]{
         margin-left: 0;
     }
 
+/*----------------------------------------- About Page Responsive ------------------------------------------------*/
+   /* About Banner Section*/
+   .aboutText{
+    margin: 4rem auto 4rem;
+}
+
+.aboutHeading{
+    font-size: 4.8rem;
+}
+
+.welcome{
+    font-size: 2rem;
+}
+
+.intro{
+    font-size: 1rem;
+}
+
+ /* Our Mission Section*/
+.ourMissionContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.ourMissionFirst{
+    width: 87vw;
+}
+
+.ourMissionFirst p{
+    font-size: 1.2rem;
+}
+
+img[alt="aboutImage1"]{
+    width: 82vw;
+}
+
+
+.ourPromiseSection{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.promise{
+    width: 60vw;
+}
+
+.promise img{
+    width: 15vw;
+}
+
+.promise p{
+    font-size: 1.2rem;
+}
+
+.craftsmanshipContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.block1{
+    order: 2;
+    width: 82vw;
+}
+
+.block2{
+    order: 1;
+    width: 87vw;
+}
+
+.block2 p {
+    font-size: 1.2rem;
+}
+
+    
      /* Footer Section */
 .footer{
     display: flex;
