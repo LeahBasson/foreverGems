@@ -134,6 +134,195 @@ section {
     scale: 1 1;
 }
 
+/* Home Section */
+.homeBanner{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner26.png");
+    background-size: cover;
+    background-position: center; 
+}
+
+#home{
+    position: relative;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Grey color with 50% opacity */
+    z-index: 1; /* Ensure it's above the background content */
+}
+
+.homeText{
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 2;
+    margin: 12rem auto 12rem;
+}
+
+.homeHeading{
+    z-index: 2;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size: 6rem;
+}
+
+.homeText i{
+    z-index: 2;
+    font-size: 3.5rem;
+}
+
+.homeText p{
+    margin-top: -1rem;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btnShopNow{
+    padding: 0.5rem 1.3rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+}
+
+/*Women Category Section */
+.secHeading h1{
+    font-family: "Inria Serif", serif;
+    margin-top: 3rem;
+    text-align: left;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.cicrleContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.categoryCircles a{
+    text-decoration: none;
+}
+
+.categoryCircles h3:hover{
+   color: var(--alternative);
+}
+
+.categoryCircles h3{
+    font-family: "Lato", sans-serif;
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.circle{
+    width: 20vw;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid var(--alternative);
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* About Link Banner */
+#aboutLink{
+    position: relative;
+    z-index: 0;
+}
+
+.aboutLink{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner1.jpg");
+    background-size: cover;
+    background-position: center; 
+}
+
+.aboutLinkText{
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 2;
+    margin: 14rem auto 14rem;
+}
+
+.aboutLinkHeading{
+    z-index: 2;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.aboutLink i{
+    z-index: 2;
+    font-size: 3.2rem;
+}
+
+.luxury{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.aboutLink p{
+    margin-top: 1rem;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btnAboutLink{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+}
+
+/* New Arrivals */
+.newArrivalsProducts{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.card-img-top{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.btnViewMore{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 4rem;
+}
+
+.card-body{
+    background-color: var(--alternative);
+}
+
+.card-title, .card-text, .product-amount {
+    color: var(--secondary);
+}
+
+/* Mens category section */
+.cicrleContainerMens{
+    display: flex;
+    gap: 10rem;
+    justify-content: space-around;
+    margin-bottom: 3rem;  
+}
 
 /* Footer Section */
 .footer{
@@ -235,4 +424,239 @@ img[alt="footerLogo"]{
     color: var(--primary);
     font-family: "Lato", sans-serif;
     font-size: 1.2rem;
+}
+
+
+/*---------------------------------------- Media query --------------------------------------------------------------*/
+@media (width < 999px)
+{
+    
+    /* Nav Section*/
+    img[alt='logo']{
+        width: 12rem;
+    }
+
+    .navbar-nav li::after{
+        left: 50%;
+        width: 30%;
+    }
+
+    .navbar-nav .nav-link{
+        margin-right: 0;
+    }
+
+    .dropdown-menu{
+        text-align: center;
+    }
+
+    /*----------------------------------------- Home Page Responsive ------------------------------------------------*/
+    /* Home Section*/
+    .homeHeading{
+        font-size: 4rem;
+    }
+
+    .homeText{
+        margin: 4rem auto 4rem;
+    }
+
+    .homeText i{
+       font-size:  2.3rem;
+    }
+    .homeText p{
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+    /* Womens Collection Section */
+    .secHeading h1{
+        text-align: center;
+        font-size: 2rem;
+        margin-left: 0;
+        font-weight: bold;
+    }
+    
+    .cicrleContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 3rem;
+    }
+   
+    .categoryCircles h3{
+       font-size: 1.3rem;
+       margin-bottom: 3rem;
+       margin-top: 0.5rem;
+    }
+    
+    .circle{
+        width: 58vw;
+        height: auto;
+        border-radius: 50%;
+        background-color: #b6b6b6;
+        border: 1px solid var(--alternative);
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* About Section*/
+    .aboutLinkText{
+        margin: 5rem auto 5rem;
+    }
+    
+    .aboutLinkHeading{
+        font-size: 1.8rem;
+    }
+    
+    .aboutLink i{
+        font-size: 1.5rem;
+    }
+    
+    .luxury{
+        font-size: 1rem;
+        font-style: italic;
+    }
+    
+    .aboutLink p{
+        font-size: 1rem;
+    }
+    
+    .btnAboutLink{
+        padding: 0.5rem 1.5rem;
+        background-color: var(--alternative);
+        border: 1px solid white;
+        margin-top: 2rem;
+    }
+
+    /* New Arrivals Section */
+.newArrivalsProducts{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+    /* Mens Collection Section*/
+    .cicrleContainerMens{
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 0;  
+
+    }
+
+    .cicrleContainerMens .firstCircle{
+        margin-left: 0;
+    }
+
+     /* Footer Section */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0;
+}
+
+img[alt="footerLogo"]{
+    width: 80vw;
+}
+
+.leftSection{
+    width: 80vw;
+    margin-left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightSection{
+    margin-left: 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.leftSection h3{
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-size: 1.1rem;  
+}
+
+.leftSection h5{
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+
+}
+
+ .input-container {
+    position: relative;
+    width: 70vw;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+  
+ [type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: none; /* Remove other borders */
+    border-bottom: 1px solid #0a0a0a; /* Add bottom border */
+    font-size: 0.9rem;
+    outline: none;
+   background-color: var(--bgHeaderFooter);
+   font-style: italic;
+   font-weight: 600;
+   color: var(--primary);
+}
+
+.btnSubscribe{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    margin-bottom: 2rem;
+    margin: auto;
+}
+
+.rightSection h4{
+    font-family: "Inria serif", sans-serif;
+    font-weight: bold;
+    color: var(--alternative);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.Products{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.Company{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  
+}
+
+.rightSection a{
+    text-decoration: none;
+    color: var(--primary);
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.copyRightSection{
+    text-align: center;
+}
+
 }
