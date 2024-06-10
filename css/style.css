@@ -1,0 +1,238 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* custom variables */
+:root{
+        --primary: black;
+        --secondary: white;
+        --alternative: rgb(18, 21, 37);
+        --awesome: #E59BE9;
+        --mainBoxShadow: .5vw .5vw .3vw var(--alternative), inset .8vw 1vw .2vw var(--secondary), 1vw 1vw .2vw var(--secondary); 
+        --borderColor: #8644A2;
+        --elementShadow: .2vw .3vw .2vw #FFEBB2;  
+        --bgHeaderFooter: #F1E5D1;
+}
+
+@property --top-left{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --top-right{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bottom-left{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --bottom-right{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+/* Navbar & footer */
+:is(.navbar, footer){
+    background-color: var(--bgHeaderFooter);
+}
+
+/* Navbar */
+img[alt='logo']{
+    width: 19rem;
+    aspect-ratio: 4/1;
+    object-fit: cover;
+    object-position: center;
+    transition: all .5s;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+/* Navbar */
+.navbar-nav .nav-link:hover{
+    color: var(--alternative);
+}
+
+/* Override hover effect for dropdown items */
+.nav-item .dropdown-item:hover {
+    /* Set the properties to the desired values on hover */
+    color: inherit; /* or any other color */
+    background-color: transparent; /* or any other color */
+    text-decoration: none; /* if there's an underline effect */
+    /* Add any other properties that are being changed on hover */
+}
+
+.navbar-nav .nav-link{
+    font-family:  "Inria Serif", serif;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-right: 4rem;
+}
+
+/* Grid Layout */
+:is(body) {
+    display: grid;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgHeaderFooter); ;
+}
+
+/* Create 3 rows */
+:is(body){
+    grid-template-rows: auto minmax(1fr, 100dvh) auto;
+}
+
+section {
+    scroll-margin-block: 5rem;
+}
+
+/* To change the color of the toggler */
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(18, 21, 37)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* To change the color of the toggler when you hover */
+.navbar-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(18, 21, 37)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.navbar-nav li {
+    position: relative;
+}
+
+.navbar-nav li::after{
+    content: "";
+    position: absolute;
+    left: 30%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for half of the width */
+    bottom: 0;
+    height: 3px;
+    width: 60%;
+    background: var(--alternative);
+    scale: 0 1;
+    transition: scale 250ms;
+}
+
+.navbar-nav li:hover::after{
+    scale: 1 1;
+}
+
+
+/* Footer Section */
+.footer{
+    display: flex;
+    justify-content: flex-start;
+    gap: 17rem;
+}
+
+img[alt="footerLogo"]{
+    width: 20rem;
+    aspect-ratio: 4/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.leftSection{
+    width: 30vw;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+
+.rightSection{
+    margin-top: 3rem;
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftSection h3{
+    margin-left: 1rem;
+    font-family: "Inria Serif", serif;
+    margin-top: 3rem;
+    font-weight: bold;
+}
+
+.leftSection h5{
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+ .input-container {
+    position: relative;
+    width: 20vw;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+  
+ [type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: none; /* Remove other borders */
+    border-bottom: 1px solid #0a0a0a; /* Add bottom border */
+    font-size: 1rem;
+    outline: none;
+   background-color: var(--bgHeaderFooter);
+   font-style: italic;
+   font-weight: 600;
+   color: var(--primary);
+}
+
+.btnSubscribe{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.4rem;
+}
+
+.rightSection h4{
+    font-family: "Inria serif", sans-serif;
+    font-weight: bold;
+    color: var(--alternative);
+    font-size: 1.4rem;
+}
+
+.Products{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.Company{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.rightSection a{
+    text-align: left;
+    text-decoration: none;
+    color: var(--primary);
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+}
