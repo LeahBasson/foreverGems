@@ -24,10 +24,10 @@ document.querySelector('[currentYear]').textContent =
                                 <h5 class="card-title">${product.productName}</h5>
                                 <p class="card-text">${product.Material}</p>
                                 <p class="card-text">
-                                    <span class="shadow text-success fw-bold">Amount</span>
+                                    <span class="shadow amount fw-bold">Amount</span>
                                     R${product.Amount}
                                 </p>
-                                <button type='button' class="btn btn-success" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
+                                <button type='button' class="btn btnAddToCart" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
                             </div>
                         </div>
                     `
