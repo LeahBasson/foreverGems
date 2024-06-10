@@ -13,46 +13,46 @@ let products = JSON.parse(localStorage.getItem('products'))
         [
             {
             id: 1,
-            productName: "Gemstone",
-            category: "Ring",
+            productName: "Dome Figure Slim Ring",
+            category: "Rings",
             Material: "Gold",
-            Amount: 1000,
+            Amount: 1200,
             gender: "Woman",
             img_url: "https://leahbasson.github.io/MyImages/jsProject/domeFigureSlimRing.jpg"
             },
             {
                 id: 2,
-                productName : "Chunky Silver",
-                category: "Bracelets",
-                Material: "Silver",
-                Amount: 300,
+                productName : "Layered Opal Necklace",
+                category: "Necklaces",
+                Material: "Gold Vermeil, Opal",
+                Amount: 1500,
                 gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/LayeredOpalNecklace.jpg"
             },
             {
                 id: 3,
-                productName: "Chain Necklace",
+                productName: "Pearl Charm Necklace",
                 category: "Necklaces",
-                Material: "Gold",
-                Amount: 600,
+                Material: "Gold Vermeil, Pearl",
+                Amount: 1000,
                 gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/PearlCharmNecklace.jpg"
             },
             {
                 id: 4,
-                productName: "Pear Shaped Pearls",
+                productName: "Tube Medium Hoops",
                 category: "Earrings",
-                Material: "Pearls, Gold",
-                Amount: 300,
+                Material: "Gold Vermeil",
+                Amount: 500,
                 gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/TubeMediumHoops.jpg"
             },
             {
                 id: 5,
-                productName: "Heart Shaped Earrings",
-                category: "Earrings",
-                Material: "Gold, Diamond",
-                Amount: 500,
+                productName: "Anchor Chain Bracelet",
+                category: "Bracelets",
+                Material: "14k Yellow Gold",
+                Amount: 900,
                 gender: "Woman",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/AnchorChainBracelet.jpg"
             },
@@ -64,6 +64,69 @@ let products = JSON.parse(localStorage.getItem('products'))
                 Amount: 1200,
                 gender: "Man",
                 img_url: "https://leahbasson.github.io/MyImages/jsProject/MensBlackOnyxSquareSignetRing.jpg"
+            },
+            {
+                id: 7,
+                productName: "Bold Huggie Hoops",
+                category: "Earrings",
+                Material: "14k Yellow Gold",
+                Amount: 500,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/BoldHuggieHoops.jpg"
+            },
+            {
+                id: 8,
+                productName: "Stacker Ring",
+                category: "Rings",
+                Material: "14k Yellow Gold",
+                Amount: 1300,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/StackerRing.jpg"
+            },
+            {
+                id: 9,
+                productName: "Puffy Charlotte Cuff Bracelet",
+                category: "Bracelets",
+                Material: "14k Yellow Gold",
+                Amount: 1100,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/PuffyCharlotteCuffBracelet.jpg"
+            },
+            {
+                id: 10,
+                productName: "Bold Diamond Eternity Ring",
+                category: "Rings",
+                Material: "14k Yellow Gold, Natural Diamond",
+                Amount: 1800,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/BoldDiamondEternityRing.jpg"
+            },
+            {
+                id: 11,
+                productName: "Large Pave Diamond Round Necklace",
+                category: "Necklaces",
+                Material: "14k Yellow Gold, Natural Diamond",
+                Amount: 850,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/LargePaveDiamondRoundNecklace.jpg"
+            },
+            {
+                id: 12,
+                productName: "Diamond Mini Studs",
+                category: "Earrings",
+                Material: "14k Yellow Gold, Natural Diamond",
+                Amount: 400,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/DiamondMiniStuds.jpg"
+            },
+            {
+                id: 12,
+                productName: "Serpentine Chain Bracelet",
+                category: "Bracelets",
+                Material: "14k Yellow Gold",
+                Amount: 1000,
+                gender: "Woman",
+                img_url: "https://leahbasson.github.io/MyImages/jsProject/SerpentineChainBracelet.jpg"
             }
         ]  
     )
