@@ -112,7 +112,6 @@ section {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(18, 21, 37)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-
 .navbar-nav li {
     position: relative;
 }
@@ -132,6 +131,21 @@ section {
 
 .navbar-nav li:hover::after{
     scale: 1 1;
+}
+
+.navbar-nav li .active {
+    border-bottom: 3px solid var(--alternative); 
+    width: 6rem;
+}
+
+.dropdown-item .active{
+    border-bottom: 3px solid var(--alternative); 
+    width: 6rem;
+    background-color: transparent;
+}
+
+.badge{
+    background-color: var(--alternative);
 }
 
 /* Home Section */
@@ -737,6 +751,87 @@ img[alt="aboutImage1"]{
     background-position: center;  
 }
 
+/*---------------------------------------------- Admin Page -----------------------------------------------------*/
+.adminBannerImage{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/homeBanner.jpg");
+    background-size: cover;
+    background-position: center;  
+}
+
+.adminText{
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 2;
+    margin: 15rem auto 15rem;
+}
+
+.adminHeading{
+    z-index: 2;
+    font-family: "Inria Serif", serif;
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.adminButtons{
+    width: 93vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.btnSorting, .btnAddNewProducts{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 0.5rem;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 0.6rem 2rem;
+    margin: 0;
+}
+
+.tableContainer{
+    width: 93vw;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.adminImages{
+    width: 30%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.btnEdit{
+    padding: 0.5rem 2.1rem;
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 0.5rem;
+}
+
+.btnDelete{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 0.5rem;
+}
+
+/*---------------------------------------------- Conatact Page -----------------------------------------------------*/
+.contactBannerImage{
+    position: relative;
+    background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner13.jpg");
+    background-size: cover;
+    background-position: center;  
+}
+
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
 {
@@ -753,10 +848,15 @@ img[alt="aboutImage1"]{
 
     .navbar-nav .nav-link{
         margin-right: 0;
+        text-align: center;
     }
 
     .dropdown-menu{
         text-align: center;
+    }
+
+    .navbar-nav li .active{
+        margin: auto;
     }
 
     /*----------------------------------------- Home Page Responsive ------------------------------------------------*/
@@ -766,7 +866,7 @@ img[alt="aboutImage1"]{
     }
 
     .homeText{
-        margin: 4rem auto 4rem;
+        margin: 8rem auto 8rem;
     }
 
     .homeText i{
@@ -865,7 +965,7 @@ img[alt="aboutImage1"]{
 /*----------------------------------------- About Page Responsive ------------------------------------------------*/
    /* About Banner Section*/
    .aboutText{
-    margin: 4rem auto 4rem;
+    margin: 6rem auto 6rem;
 }
 
 .aboutHeading{
@@ -1026,6 +1126,16 @@ img[alt="aboutImage1"]{
 .card{
     width: 78vw;
 }
+
+/*----------------------------------------- Admin Page Responsive ---------------------------------------------------*/
+.adminText{
+    margin: 15rem auto 15rem;
+}
+
+.adminHeading{
+    font-size: 4rem;
+}
+
     
      /* Footer Section */
 .footer{
