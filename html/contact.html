@@ -59,7 +59,7 @@
             <div class="womensOverlay"></div>
             <div class="contactBannerImage">
               <div class="adminText">
-                <div class="adminHeading text-white">Contact</div>
+                <div class="adminHeading text-white">Contact Us</div>
               </div>
             </div>
           </div>
@@ -67,11 +67,61 @@
 
         <section>
           <div class="container-fluid">
-            <div class="row">
+            <div class="row contact">
+            <div class="col contactFirstCol">
+              <div class="secHeading">
+                <h1>GET IN TOUCH</h1>
+              </div>
+                <p>We're always thrilled to hear from you!
+                  We love connecting with fellow jewelry 
+                  enthusiasts. Whether you have a question 
+                  about our pieces, need assistance with
+                  an order, or just want to share your love 
+                  for all things shiny, we're here for you.
+                  Thank you for visiting our website. We 
+                  look forward to hearing from you!</p>
+
+                  <h3 class="text-black">Contact Information:</h3>
+                  <h5><span class="fw-bold">Email : </span>foreverGems54@gmail.com</h5>
+                  <h5><span class="fw-bold">Phone number : </span>021 636 1899</h5>   
+            </div>
+            <div class="col">
+              <form id="contactForm" action="https://formspree.io/f/mjvqdzra" method="POST" >
+                <div class="row">
+                    <div class="col formDiv">
+                        <div class="form-group">
+                          <label class="labelText">Enter your name:</label>
+                            <!-- Name input-->
+                            <input class="form-control" id="name" type="text" name="Name" placeholder="Full Name" required />
+                        </div>
+                        <div class="form-group">
+                          <label class="labelText">Enter your email address:</label>
+                            <!-- Email address input-->
+                            <input class="form-control" id="email" type="email" name="Email" placeholder="Email address" required />
+                        </div>
+                        <div class="form-group mb-md-0">
+                          <label class="labelText">Enter your phone number:</label>
+                            <!-- Phone number input-->
+                            <input class="form-control" id="phone" type="tel" name="cell" placeholder="Phone number" required />
+                        </div>
+                        <div class="form-group form-group-textarea mb-md-0">
+                          <label class="labelText">Enter your inquiry:</label>
+                          <!-- Message input-->
+                          <textarea class="form-control mb-2" id="message" name="Message" placeholder="Message" required></textarea>
+                      </div>
+                    </div>
+        
+                </div>
               
+                <!-- Submit Button-->
+      <div class="text-center mb-2"><button class="btnContactSubmit" id="submitButton" type="submit">SUBMIT</button></div>
+            </form>
+            
+            </div>
             </div>
           </div>
         </section>
+
     </main>
 
       <footer class="container-fluid" id="footer">
