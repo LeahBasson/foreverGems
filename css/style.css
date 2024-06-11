@@ -393,8 +393,8 @@ img[alt="footerLogo"]{
     margin-bottom: 1rem;
     margin-left: 1rem;
 }
-  
- [type="text"] {
+
+.input-container [type="email"] {
     width: 100%;
     padding: 0.5rem;
     border: none; /* Remove other borders */
@@ -406,6 +406,7 @@ img[alt="footerLogo"]{
    font-weight: 600;
    color: var(--primary);
 }
+  
 
 .btnSubscribe{
     padding: 0.5rem 1.5rem;
@@ -824,7 +825,7 @@ th, td{
     border-radius: 0.5rem;
 }
 
-/*---------------------------------------------- Conatact Page -----------------------------------------------------*/
+/*---------------------------------------------- Contact Page -----------------------------------------------------*/
 .contactBannerImage{
     position: relative;
     background-image: url("https://leahbasson.github.io/MyImages/jsProject/banner13.jpg");
@@ -905,6 +906,13 @@ th, td{
     color: var(--secondary);
     border-radius: 0.5rem;
     margin-top: 1rem;
+}
+
+.cartHeading h1{
+    text-align: left;
+    font-family: "Inria Serif",sans-serif;
+    margin-left: 3rem;
+    font-size: 4rem;
 }
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/
@@ -1221,11 +1229,20 @@ img[alt="aboutImage1"]{
 
 .contactFirstCol p{
     width: 74vw;
+    margin: auto;
+}
+
+.contactFirstCol h3{
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .contactFirstCol h5{
-    width: 50vw;
-   font-size: 1.1rem;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 1rem;
 }
 
 .form-group{
@@ -1316,9 +1333,11 @@ img[alt="footerLogo"]{
 }
 
 .links{
+    width: 26vw;
+    margin: auto;
+    margin-top: 1rem;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
 }
 
 .Products{

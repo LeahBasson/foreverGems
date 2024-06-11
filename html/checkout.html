@@ -41,7 +41,7 @@
                 <a class="nav-link" href="./contact.html">CONTACT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./checkout.html">
+                <a class="nav-link active text-black" href="./checkout.html">
                   <i class="bi bi-cart-fill fs-5"></i>
                   <span class="badge rounded-pill" counter>
                     0
@@ -53,6 +53,33 @@
         </div>
       </nav>
 
+      <main>
+        <section class="container-fluid">
+          <div class="row">
+            <div class="cartHeading">
+              <h1>CHECKOUT</h1>
+            </div>
+              
+           
+            <div class="tableContainer">
+              <table>
+                <thead>
+                 <th>Product Name</th>
+                 <th>Material</th>
+                 <th>Quantity</th>
+                 <th>Amount</th>
+                </thead>
+                <tbody data>
+     
+                </tbody>
+             </table>
+            </div>
+            
+   
+          </div>
+        </section>
+      </main>
+
       <footer class="container-fluid" id="footer">
         <div class="row footer">
           <div class="leftSection">
@@ -60,10 +87,12 @@
           <img class="img-fluid" src="https://leahbasson.github.io/MyImages/jsProject/finalForeverLogo.png" alt="footerLogo" loading="eager">
           <h3>JOIN OUR NEWSLETTER</h3>
           <h5>Stay connected and be the first to know about new collections, events, and exclusive offers.</h5>
-          <div class="input-container">
-            <input type="text" placeholder="Enter your email address">
-          </div>
-          <a href="#about"><button type="button" class="btnSubscribe text-white">SUBSCRIBE</button></a>
+          <form  action="https://formspree.io/f/mjvqdzra" method="POST">
+            <div class="input-container">
+              <input type="email" name="Email" placeholder="Enter your email address" required>
+            </div>
+            <button class="btnSubscribe text-white" id="subscribeButton" type="submit">SUBSCRIBE</button>
+          </form>
   
           </div>
           <div class="rightSection">

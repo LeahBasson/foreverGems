@@ -129,10 +129,12 @@
           <img class="img-fluid" src="https://leahbasson.github.io/MyImages/jsProject/finalForeverLogo.png" alt="footerLogo" loading="eager">
           <h3>JOIN OUR NEWSLETTER</h3>
           <h5>Stay connected and be the first to know about new collections, events, and exclusive offers.</h5>
-          <div class="input-container">
-            <input type="text" placeholder="Enter your email address">
-          </div>
-          <a href="#about"><button type="button" class="btnSubscribe text-white">SUBSCRIBE</button></a>
+          <form action="https://formspree.io/f/mjvqdzra" method="POST">
+            <div class="input-container">
+              <input type="email" name="Email" placeholder="Enter your email address" required>
+            </div>
+            <button class="btnSubscribe text-white" id="subscribeButton" type="submit">SUBSCRIBE</button>
+          </form>
   
           </div>
           <div class="rightSection">
