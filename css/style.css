@@ -832,6 +832,81 @@ th, td{
     background-position: center;  
 }
 
+.contact{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contactFirstCol p{
+    width: 42vw;
+    margin-left: 2rem;
+    text-align: left;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    font-family: "Lato", sans-serif;
+}
+
+.contactFirstCol h3{
+    font-family: "Inria Serif",sans-serif;
+    text-align: left;
+    margin-left: 2rem;
+    margin-top: 5rem;
+    font-weight: bold;
+}
+
+.contactFirstCol h5{
+    text-align: left;
+    margin-left: 2rem;
+    color: var(--primary);
+    margin-top: 1rem;
+}
+
+.form-group{
+    padding: 0.5rem 1rem;
+}
+
+.formDiv{
+    text-align: left;
+    margin-top: 3rem;
+    font-family: "Lato", sans-serif;
+}
+
+.labelText{
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-control{
+    background-color: var(--secondary);
+    border: 1px solid var(--alternative);
+}
+
+.form-control::placeholder{
+    font-style: italic;
+    font-weight: 500;
+}
+
+.form-control:focus{
+    border: 1px solid var(--alternative);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btnContactSubmit{
+    padding: 0.5rem 1rem;
+    background-color: var(--alternative);
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
 {
@@ -1136,6 +1211,32 @@ img[alt="aboutImage1"]{
     font-size: 4rem;
 }
 
+/*----------------------------------------- Contact Page Responsive ---------------------------------------------------*/
+.contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactFirstCol p{
+    width: 74vw;
+}
+
+.contactFirstCol h5{
+    width: 50vw;
+   font-size: 1.1rem;
+}
+
+.form-group{
+    width: 84vw;
+    margin: auto;
+}
+
+.form-control{
+    background-color: var(--secondary);
+    border: 1px solid var(--alternative);
+}
     
      /* Footer Section */
 .footer{
@@ -1191,19 +1292,7 @@ img[alt="footerLogo"]{
     margin-left: 1rem;
 }
   
- [type="text"] {
-    width: 100%;
-    padding: 0.5rem;
-    border: none; /* Remove other borders */
-    border-bottom: 1px solid #0a0a0a; /* Add bottom border */
-    font-size: 0.9rem;
-    outline: none;
-   background-color: var(--bgHeaderFooter);
-   font-style: italic;
-   font-weight: 600;
-   color: var(--primary);
-}
-
+ 
 .btnSubscribe{
     padding: 0.5rem 1.5rem;
     background-color: var(--alternative);
@@ -1216,7 +1305,7 @@ img[alt="footerLogo"]{
     font-family: "Inria serif", sans-serif;
     font-weight: bold;
     color: var(--alternative);
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -1228,7 +1317,7 @@ img[alt="footerLogo"]{
 
 .links{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 1rem;
 }
 
