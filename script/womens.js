@@ -39,19 +39,22 @@ document.querySelector('[currentYear]').textContent =
         }
         displayProducts(womanProducts)
         
-        // keyup
-        searchProduct.addEventListener('keyup', () => {
-            try {
-                if (searchProduct.value.length < 1) {
-                    displayProducts(products)
-                }
-                let filteredProduct = products.filter(product => product.productName.toLowerCase().includes(searchProduct.value))
-                displayProducts(filteredProduct)
-                if (!filteredProduct.length) throw new Error(`${searchProduct.value} product was not found`)
-            } catch (e) {
-                container.textContent = e.message || 'Please try again later'
-            }
-        })
+        // // keyup
+        // searchProduct.addEventListener('keyup', () => {
+        //     try {
+        //         if (searchProduct.value.length < 1) {
+        //             displayProducts(products)
+        //         }
+        //         let filteredProduct = products.filter(product => product.productName.toLowerCase().includes(searchProduct.value))
+        //         displayProducts(filteredProduct)
+        //         if (!filteredProduct.length) throw new Error(`${searchProduct.value} product was not found`)
+        //     } catch (e) {
+        //         container.textContent = e.message || 'Please try again later'
+        //     }
+        // })
+
+        
+
         // Sorting by ascending and descending
         let isToggle = false
         sortingByAmount.addEventListener('click', () => {
@@ -81,6 +84,6 @@ document.querySelector('[currentYear]').textContent =
                 alert("Unable to add to cart")
             }
         }
-        // window.onload = () => {
-        //     document.querySelector('[counter]').textContent = checkoutItems.length || 0
-        // }
+        window.onload = () => {
+            document.querySelector('[counter]').textContent = checkoutItems.length || 0
+        }

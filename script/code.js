@@ -11,7 +11,7 @@ let products = JSON.parse(localStorage.getItem('products'))
 ? JSON.parse(localStorage.getItem('products'))  : localStorage.setItem('products', JSON.stringify
     (
         [
-            {
+            {         
             id: 1,
             productName: "Dome Figure Slim Ring",
             category: "Rings",
@@ -250,3 +250,7 @@ function recentProducts(){
 }
 
 recentProducts()
+
+
+
+
