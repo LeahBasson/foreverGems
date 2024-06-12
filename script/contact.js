@@ -3,41 +3,87 @@ document.querySelector('[currentYear]').textContent =
     new Date().getUTCFullYear()
 
 
-//Form Validation
-document.querySelector('[submit]').addEventListener('click' , () => {
-    let fullName = document.querySelector('#name').value;
-    let email = document.querySelector('#email').value;
-    let phone = document.querySelector('#phone').value;
-    let message = document.querySelector('#message').value;
 
-    if (fullName ==  null || fullName == ""){
-        nameError = "This field is necessary.";
-        document.getElementById("name_error").innerHTML = nameError;
-        return false;
-    }
+// Function to validate form fields
+function validateForm() {
+    let form = document.forms["myForm"];
+    let name = form["name"].value;
+    let email = form["email"].value;
+    let phone = form["phone"].value;
+    let message = form["message"].value;
 
-    else if(email == null || email == ""){
-        emailError = "This field is necessary.";
-        document.getElementById("email_error").innerHTML = emailError;
-        return false;
-    }
+    if (name === "") {
+        document.getElementById("name_error").innerHTML = "Please enter your name";
+        return false; // Prevent form submission
+      } 
+      else if (email === ""){
+        document.getElementById("email_error").innerHTML = "Please enter your email address";
+        return false; 
+      }
+      else if (phone === ""){
+        document.getElementById("phone_error").innerHTML = "Please enter your phone number";
+        return false; 
+      }
+      else if (message === ""){
+        document.getElementById("message_error").innerHTML = "Please enter your inquiry";
+        return false; 
+      }
 
-    else if(phone == null || phone == ""){
-        phoneError = "This field is necessary.";
-        document.getElementById("phone_error").innerHTML = phoneError;
-        return false;
-    }
-
-    else if(message== null || message == ""){
-        messageError = "This field is necessary.";
-        document.getElementById("message_error").innerHTML = messageError;
-        return false;
-    }
-
-    else{
-        document.getElementById("name_error").innerHTML = "";
+      else {
+        document.getElementById("name_error").innerHTML = ""; // Clear the error message
         document.getElementById("email_error").innerHTML = "";
         document.getElementById("phone_error").innerHTML = "";
         document.getElementById("message_error").innerHTML = "";
+      }
+    
+  
+    return true; // Allow form submission if validation passes
+  }
+  
+
+ // Wait for the DOM to be loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the form element
+    let form = document.forms["myForm"];
+  
+    // Attach the event listener to the form's submit event
+    form.addEventListener("submit", function(event) {
+      // Prevent the default form submission
+      event.preventDefault();
+  
+      // Call the validateForm function and check if it returns true
+      if (validateForm()) {
+        // If validation passes, submit the form
+        event.target.submit();
+      }
+    });
+  });
+
+
+  // Function to validate footer form fields
+function validateFooterForm() {
+    let footerForm = document.forms["footerForm"];
+    let footerEmail = footerForm["footerEmail"].value;
+    // ... other validations for the footer form
+  
+    if (footerEmail === "") {
+        document.getElementById("footer_error").innerHTML = "Please enter your email address";
+        return false; // Prevent form submission
+      } 
+      else {
+        document.getElementById("footer_error").innerHTML = ""; 
+        }
+
+        return true; // Allow form submission if validation passes
+}
+
+  // Get the footer form element
+  let footerForm = document.forms["footerForm"];
+
+  // Attach the event listener to the footer form's submit event
+  footerForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (validateFooterForm()) {
+      event.target.submit();
     }
-})
+  });

@@ -87,9 +87,10 @@
           <img class="img-fluid" src="https://leahbasson.github.io/MyImages/jsProject/finalForeverLogo.png" alt="footerLogo" loading="eager">
           <h3>JOIN OUR NEWSLETTER</h3>
           <h5>Stay connected and be the first to know about new collections, events, and exclusive offers.</h5>
-          <form  action="https://formspree.io/f/mjvqdzra" method="POST">
+          <form  action="https://formspree.io/f/mjvqdzra" method="POST" name="footerForm">
             <div class="input-container">
-              <input type="email" name="Email" placeholder="Enter your email address" required>
+              <input type="email" name="Email" placeholder="Enter your email address" id="footerEmail">
+              <label id="footer_error"></label>
             </div>
             <button class="btnSubscribe text-white" id="subscribeButton" type="submit">SUBSCRIBE</button>
           </form>
