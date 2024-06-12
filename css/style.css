@@ -736,6 +736,10 @@ img[alt="aboutImage1"]{
     border: 1px solid var(--secondary);
 }
 
+.spinner-border {
+    margin-left: 43rem;
+}
+
 /*---------------------------------------------- Mens Page --------------------------------------------*/
 .mensBannerImage{
     position: relative;
