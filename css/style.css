@@ -1220,6 +1220,12 @@ img[alt="aboutImage1"]{
     margin: 15rem auto 15rem;
 }
 
+.adminButtons{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .adminHeading{
     font-size: 4rem;
 }

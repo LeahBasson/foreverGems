@@ -138,7 +138,6 @@ function displayProducts(args) {
     }
 }
 
-   
          // Add to cart
         function addToCart(product) {
             try {
