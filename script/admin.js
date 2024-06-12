@@ -4,8 +4,7 @@ document.querySelector('[currentYear]').textContent =
 
 
     let container = document.querySelector('[data]')
-    // let searchProduct = document.querySelector('[searchProduct]')
-    // let sortingByAmount = document.querySelector('[sorting]')
+    let sortingAlphabetically = document.querySelector('[sorting]')
     let products = JSON.parse(
         localStorage.getItem('products')
     )
@@ -33,10 +32,39 @@ document.querySelector('[currentYear]').textContent =
                 })
         
             } catch (e) {
-                container.textContent = "Please try again later"
+                container.innerHTML +=`<div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>`
             }
         }
         displayProducts(products)
+
+      
+        // Sort alphabetically by product name 
+        let isToggle = false;
+        sortingAlphabetically.addEventListener('click', () => {
+    try {
+        if (!products) throw new Error('Please try again later');
+        if (!isToggle) {
+          
+          // Sort by product name in ascending order (A to Z)
+            products.sort((a, b) => a.productName.localeCompare(b.productName));
+            sortingAlphabetically.textContent = 'NAME: A TO Z';
+            isToggle = true;
+        } else {
+            // Sort by product name in descending order (Z to A)
+            products.sort((a, b) => b.productName.localeCompare(a.productName));
+            sortingAlphabetically.textContent = 'NAME: Z TO A';
+            isToggle = false;
+        }
+        displayProducts(products);
+    } catch (e) {
+        container.textContent = e.message || 'We are working on this issue';
+    }
+});
+
+        
+        
 
          // Function to validate footer form fields
 function validateFooterForm() {
