@@ -97,6 +97,47 @@ sortingByAmount.addEventListener('click', () => {
     }
 })
 
+
+
+
+// Category Filter
+const categoryLinks = document.querySelectorAll('.nav-link'); 
+
+categoryLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+        const selectedCategory = event.target.textContent; // Get the category name
+        const filteredProducts = womanProducts.filter((product) => product.category === selectedCategory);
+
+        // Display filtered products
+        displayProducts(filteredProducts);
+    });
+});
+
+// Display products (similar to existing displayProducts function)
+function displayProducts(args) {
+    container.innerHTML = ''; // Clear existing content
+    try {
+        args.forEach((product) => {
+            container.innerHTML += `
+              <div class="card">
+                            <img src="${product.img_url}" class="card-img-top" alt="${product.productName}" loading='lazy'>
+                            <div class="card-body">
+                                <h5 class="card-title">${product.productName}</h5>
+                                <p class="card-text">${product.Material}</p>
+                                <p class="card-text">
+                                    <span class="shadow amount fw-bold">Amount</span>
+                                    R${product.Amount}
+                                </p>
+                                <button type='button' class="btn btnAddToCart" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
+                            </div>
+                        </div>
+            `;
+        });
+    } catch (e) {
+        console.error('Error displaying products:', e.message);
+    }
+}
+
    
          // Add to cart
         function addToCart(product) {
