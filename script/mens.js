@@ -40,19 +40,37 @@ document.querySelector('[currentYear]').textContent =
         }
         displayProducts(manProducts)
         
-        // keyup
-        searchProduct.addEventListener('keyup', () => {
-            try {
-                if (searchProduct.value.length < 1) {
-                    displayProducts(products)
+       //The DOMContentLoaded event ensures that the script runs after the full HTML document has been loaded.       
+       document.addEventListener('DOMContentLoaded', (event) => { 
+        let searchInput = document.getElementById('searchInput');
+        let container = document.getElementById('container');
+        let products = manProducts; // Ensure this is the correct reference to your products array
+    
+        searchInput.addEventListener('input', () => {
+            let searchValue = searchInput.value.trim();
+            let isPlaceholderShowing = searchValue === '';
+    
+            if (isPlaceholderShowing) {
+                displayProducts(products); // Display all products if search input is empty
+            } else {
+                try {
+                    let filteredProducts = products.filter(product => 
+                        product.productName.toLowerCase().includes(searchValue.toLowerCase())
+                    );
+    
+                    if (filteredProducts.length > 0) {
+                        displayProducts(filteredProducts);
+                    } else {
+                        container.innerHTML = '<span class="error-message">Product not found**</span>';// Display a message when no matching products
+                    }
+                } catch (e) {
+                    container.textContent = e.message || 'Please try again later';
                 }
-                let filteredProduct = products.filter(product => product.productName.toLowerCase().includes(searchProduct.value))
-                displayProducts(filteredProduct)
-                if (!filteredProduct.length) throw new Error(`${searchProduct.value} product was not found`)
-            } catch (e) {
-                container.textContent = e.message || 'Please try again later'
             }
-        })
+        });
+    });
+
+
         // Sorting by ascending and descending
         let isToggle = false
         sortingByAmount.addEventListener('click', () => {
