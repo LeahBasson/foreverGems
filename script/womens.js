@@ -153,7 +153,7 @@ function displayProducts(args) {
             document.querySelector('[counter]').textContent = checkoutItems.length || 0
         }
 
-         
+
         // Function to validate footer form fields
 function validateFooterForm() {
     let footerForm = document.forms["footerForm"];
