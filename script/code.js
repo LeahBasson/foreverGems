@@ -233,20 +233,30 @@ let products = JSON.parse(localStorage.getItem('products'))
 
 //Code for everytime you add a recent product
 function recentProducts(){
-    let latestProducts = products.reverse().slice(0, 4);
+    
+    try{
+        let latestProducts = products.reverse().slice(0, 4);
     console.log(latestProducts);
-    latestProducts.forEach(product => {
-        wrapper.innerHTML += `
-        <div class="card">
-            <img src="${[product.img_url]}" class="card-img-top" alt="${product.productName}">
-            <div class="card-body">
-                <h5 class="card-title">${product.productName}</h5>
-                <h4 class="product-amount">R${product.Amount}</h4>
-                <p class="card-text">${product.Material}</p>
-            </div>
-        </div> `
-        
-    })
+    wrapper.innerHTML=''
+        latestProducts.forEach(product => {
+            wrapper.innerHTML += `
+            <div class="card">
+                <img src="${[product.img_url]}" class="card-img-top" alt="${product.productName}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.productName}</h5>
+                    <h4 class="product-amount">R${product.Amount}</h4>
+                    <p class="card-text">${product.Material}</p>
+                </div>
+            </div> `
+            
+        })
+    }
+        catch (e){
+             wrapper.innerHTML += ` <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>`
+        }
+    
 }
 
 recentProducts()

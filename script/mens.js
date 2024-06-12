@@ -6,18 +6,23 @@ document.querySelector('[currentYear]').textContent =
     let container = document.querySelector('[ourStore]')
     let searchProduct = document.querySelector('[searchProduct]')
     let sortingByAmount = document.querySelector('[sorting]')
-    let manProducts = JSON.parse(
-        localStorage.getItem('products')
-    ).filter( ({gender})=> gender == "Man")
+    let productsFromStorage = JSON.parse(localStorage.getItem('products')) || [];
+    let manProducts = productsFromStorage.filter(({ gender }) => gender === "Man");
+
     // items/products 
     let checkoutItems = JSON.parse(localStorage.getItem('checkout'))
         ? JSON.parse(localStorage.getItem('checkout'))
         : []
 
         function displayProducts(args) {
-            container.innerHTML = ""
+            container.innerHTML = "";
             try {
-                args.forEach(product => {
+                container.innerHTML =  `<div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+                </div>`
+                setTimeout(function(){
+                    container.innerHTML = ""
+                    args.forEach(product => {
                     container.innerHTML += `
                         <div class="card">
                             <img src="${product.img_url}" class="card-img-top" alt="${product.productName}" loading='lazy'>
@@ -33,12 +38,14 @@ document.querySelector('[currentYear]').textContent =
                         </div>
                     `
                 })
+                },500)
+                
         
             } catch (e) {
-                container.textContent = "Please try again later"
+                console.log(7)
             }
         }
-        displayProducts(manProducts)
+        displayProducts(manProducts);
         
        //The DOMContentLoaded event ensures that the script runs after the full HTML document has been loaded.       
        document.addEventListener('DOMContentLoaded', (event) => { 
@@ -71,25 +78,26 @@ document.querySelector('[currentYear]').textContent =
     });
 
 
-        // Sorting by ascending and descending
-        let isToggle = false
-        sortingByAmount.addEventListener('click', () => {
-            try {
-                if (!products) throw new Error('Please try again later')
-                if (!isToggle) {
-                    products.sort((a, b) => b.amount - a.amount)
-                    sortingByAmount.textContent = 'Sorted by highest amount'
-                    isToggle = true
-                } else {
-                    products.sort((a, b) => a.amount - b.amount)
-                    sortingByAmount.textContent = 'Sorted by lowest amount'
-                    isToggle = false
-                }
-                displayProducts(products)
-            } catch (e) {
-                container.textContent = e.message || 'We are working on this issue'
-            }
-        })
+         // Sorting by ascending and descending
+let isToggle = false
+sortingByAmount.addEventListener('click', () => {
+    try {
+        if (!manProducts) throw new Error('Please try again later')
+        if (!isToggle) {
+            manProducts.sort((a, b) => b.Amount - a.Amount)
+            sortingByAmount.textContent = 'PRICE: HIGH TO LOW'
+            isToggle = true
+        } else {
+            manProducts.sort((a, b) => a.Amount - b.Amount)
+            sortingByAmount.textContent = 'PRICE: LOW TO HIGH'
+            isToggle = false
+        }
+        displayProducts(manProducts)
+    } catch (e) {
+        container.textContent = e.message || 'We are working on this issue'
+    }
+})
+
         // Add to cart
         function addToCart(product) {
             try {

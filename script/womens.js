@@ -16,7 +16,12 @@ document.querySelector('[currentYear]').textContent =
         function displayProducts(args) {
             container.innerHTML = ""
             try {
-                args.forEach(product => {
+                container.innerHTML =  `<div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+                </div>`
+                setTimeout(function(){
+                    container.innerHTML = ""
+                    args.forEach(product => {
                     container.innerHTML += `
                         <div class="card">
                             <img src="${product.img_url}" class="card-img-top" alt="${product.productName}" loading='lazy'>
@@ -32,9 +37,11 @@ document.querySelector('[currentYear]').textContent =
                         </div>
                     `
                 })
+                },500)
+                
         
             } catch (e) {
-                container.textContent = "Please try again later"
+                console.log(7)
             }
         }
         displayProducts(womanProducts)
@@ -70,7 +77,25 @@ document.querySelector('[currentYear]').textContent =
         });
         
         
-
+        // Sorting by ascending and descending
+let isToggle = false
+sortingByAmount.addEventListener('click', () => {
+    try {
+        if (!womanProducts) throw new Error('Please try again later')
+        if (!isToggle) {
+            womanProducts.sort((a, b) => b.Amount - a.Amount)
+            sortingByAmount.textContent = 'PRICE: HIGH TO LOW'
+            isToggle = true
+        } else {
+            womanProducts.sort((a, b) => a.Amount - b.Amount)
+            sortingByAmount.textContent = 'PRICE: LOW TO HIGH'
+            isToggle = false
+        }
+        displayProducts(womanProducts)
+    } catch (e) {
+        container.textContent = e.message || 'We are working on this issue'
+    }
+})
 
    
          // Add to cart
