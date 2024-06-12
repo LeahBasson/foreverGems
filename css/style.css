@@ -911,6 +911,18 @@ th, td{
     font-size: 4rem;
 }
 
+input:not(:placeholder-shown) + #name_error{
+    visibility: hidden;
+}
+
+input:not(:placeholder-shown) + #email_error{
+    visibility: hidden;
+}
+
+input:not(:placeholder-shown) + #phone_error{
+    visibility: hidden;
+}
+
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
 {

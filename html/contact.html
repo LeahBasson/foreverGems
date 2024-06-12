@@ -86,35 +86,39 @@
                   <h5><span class="fw-bold">Phone number : </span>021 636 1899</h5>   
             </div>
             <div class="col">
-              <form id="contactForm" action="https://formspree.io/f/mjvqdzra" method="POST" >
+              <form id="contactForm" method="POST" >
                 <div class="row">
                     <div class="col formDiv">
                         <div class="form-group">
                           <label class="labelText">Enter your name:</label>
                             <!-- Name input-->
-                            <input class="form-control" id="name" type="text" name="Name" placeholder="Full Name" required />
+                            <input class="form-control" id="name" type="text" name="Name" placeholder="Full Name"/>
+                            <label id="name_error"></label>
                         </div>
                         <div class="form-group">
                           <label class="labelText">Enter your email address:</label>
                             <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" name="Email" placeholder="Email address" required />
+                            <input class="form-control" id="email" type="email" name="Email" placeholder="Email address"/>
+                            <label id="email_error"></label>
                         </div>
                         <div class="form-group mb-md-0">
                           <label class="labelText">Enter your phone number:</label>
                             <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" name="cell" placeholder="Phone number" required />
+                            <input class="form-control" id="phone" type="tel" name="cell" placeholder="Phone number"/>
+                            <label id="phone_error"></label>
                         </div>
                         <div class="form-group form-group-textarea mb-md-0">
                           <label class="labelText">Enter your inquiry:</label>
                           <!-- Message input-->
-                          <textarea class="form-control mb-2" id="message" name="Message" placeholder="Message" required></textarea>
+                          <textarea class="form-control mb-2" id="message" name="Message" placeholder="Message"></textarea>
+                          <label id="message_error"></label>
                       </div>
                     </div>
         
                 </div>
               
                 <!-- Submit Button-->
-      <div class="text-center mb-2"><button class="btnContactSubmit" id="submitButton" type="submit">SUBMIT</button></div>
+      <div class="text-center mb-2"><button class="btnContactSubmit" id="submitButton" type="button" submit>SUBMIT</button></div>
             </form>
             
             </div>
