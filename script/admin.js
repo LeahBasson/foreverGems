@@ -5,9 +5,7 @@ document.querySelector('[currentYear]').textContent =
 
     let container = document.querySelector('[data]')
     let sortingAlphabetically = document.querySelector('[sorting]')
-    let products = JSON.parse(
-        localStorage.getItem('products')
-    )
+    let products = JSON.parse(localStorage.getItem('products'))  || [];
     // items/products 
     let checkoutItems = JSON.parse(localStorage.getItem('checkout'))
         ? JSON.parse(localStorage.getItem('checkout'))
@@ -27,6 +25,8 @@ function deleteProduct(index){
     }
 }
 
+//Edit functionality
+
 
 
 function displayProducts(args) {
@@ -43,24 +43,28 @@ function displayProducts(args) {
             <td>
             <div>
                 <div class="buttons">
-                <button class="btnEdit" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}">Edit</button>
-                <button class="btnDelete" onclick="deleteProduct(${i})">Delete</button>
+                <button class="btnEdit" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}">EDIT</button>
+                <button class="btnDelete" onclick="deleteProduct(${i})">DELETE</button>
                 </div>
+
                 <div class="modal fade" id="updateProduct${product.id}" tabindex="-1" aria-labelledby="updateProduct${product.id}" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="updateProduct${product.id}">Update Product</h1>
+                      <h1 class="modal-title fs-5" id="updateProduct${product.id}">UPDATE PRODUCT</h1>
+
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form>
                       <div class="container">
-                      <input class="form-control m-2" type="text" placeholder="Enter a Product Name" value="${product.productName}" name ="admin-name" id="admin-name${product.id}" required>
-                      <input class="form-control m-2" type="text" placeholder="Enter a Product Name" value="${product.category}" name ="admin-name" id="admin-name${product.id}" required>
-                      <input class="form-control m-2" type="text" placeholder="Enter Image URL" value="${product.img_url}" name="admin-image" id="admin-image${product.id}" required>
-                      <textarea class="form-control m-2" placeholder="Enter your Product details" required name="admin-details" id="admin-details${product.id}">${product.Material}</textarea>
-                      <input class="form-control m-2" type="number" placeholder="Enter the Product Amount" value="${product.Amount}" name="admin-amount" id="admin-amount${product.id}" required>
+ 
+                      <input class="form-control m-2" type="text"  value="${product.productName}" name ="admin-name" id="admin-name${product.id}">
+                      <input class="form-control m-2" type="text" value="${product.category}" name ="admin-name" id="admin-name${product.id}" >
+                      <textarea class="form-control m-2" name="admin-details" id="admin-details${product.id}">${product.Material}</textarea>
+                      <input class="form-control m-2" type="number" value="${product.Amount}" name="admin-amount" id="admin-amount${product.id}">
+                      <input class="form-control m-2" type="text" value="${product.gender}" name ="admin-name" id="admin-name${product.id}">
+                      <input class="form-control m-2" type="text" value="${product.img_url}" name ="admin-name" id="admin-name${product.id}">
                       </div>
                       </form>
                     </div>
@@ -91,35 +95,53 @@ displayProducts(products)
 
 document.getElementById('saveNewProduct').addEventListener('click', (event) => {
     event.preventDefault(); // Prevent the form from submitting normally
-    try{
+
+    // Get form input values
+    const productName = document.querySelector('#productName').value.trim();
+    const productCategory = document.querySelector('#productCategory').value.trim();
+    const productMaterial = document.querySelector('#productMaterial').value.trim();
+    const productAmount = document.querySelector('#productAmount').value.trim();
+    const productGender = document.querySelector('#productGender').value.trim();
+    const productImage = document.querySelector('#productImage').value.trim();
+
+    // Check if all required fields are filled
+    if (productName && productCategory && productMaterial && productAmount && productGender && productImage) {
         // Creates a new product from the form values
         let newProduct = {
-            productName: document.querySelector('#productName').value,
-            category: document.querySelector('#productCategory').value,
-            img_url: document.querySelector('#productImage').value,
-            Material: document.querySelector('#productMaterial').value,
-            Amount: document.querySelector('#productAmount').value,    
+            productName,
+            category: productCategory,
+            Material: productMaterial,
+            Amount: productAmount,
+            gender: productGender,
+            img_url: productImage,
         };
-        // Adds the new product to the sweetProducts array
+
+        // Adds the new product to the products array
         products.push(newProduct);
+
         // Updates localStorage with the new list of products
         localStorage.setItem('products', JSON.stringify(products));
+
         // Updates the display of products
         displayProducts(products);
+
         // Clears the form fields
         document.querySelector('#productName').value = '';
         document.querySelector('#productCategory').value = '';
-        document.querySelector('#productImage').value = '';
         document.querySelector('#productMaterial').value = '';
         document.querySelector('#productAmount').value = '';
+        document.querySelector('#productGender').value = '';
+        document.querySelector('#productImage').value = '';
+
         // Close the modal
         var myModalEl = document.getElementById('addProductModal');
         var modal = bootstrap.Modal.getInstance(myModalEl);
         modal.hide();
-    } catch(e) {
-        alert('Unable to add new product');
+    } else {
+        alert('Please fill in all required fields.');
     }
 });
+
 
 
 
@@ -150,9 +172,33 @@ function validateFooterForm() {
     }
   });
 
+  // Sort alphabetically by product name 
+  let isToggle = false;
+  sortingAlphabetically.addEventListener('click', () => {
+try {
+  if (!products) throw new Error('Please try again later');
+  if (!isToggle) {
+
+    // Sort by product name in ascending order (A to Z)
+      products.sort((a, b) => a.productName.localeCompare(b.productName));
+      sortingAlphabetically.textContent = 'NAME: A TO Z';
+      isToggle = true;
+  } else {
+      // Sort by product name in descending order (Z to A)
+      products.sort((a, b) => b.productName.localeCompare(a.productName));
+      sortingAlphabetically.textContent = 'NAME: Z TO A';
+      isToggle = false;
+  }
+  displayProducts(products);
+} catch (e) {
+  container.textContent = e.message || 'We are working on this issue';
+}
+});
+
   // Counter
 window.onload = () => {
     document.querySelector('[counter]').textContent = JSON.parse(localStorage.getItem('checkout'))
         ? JSON.parse(localStorage.getItem('checkout')).length
         : 0
 }
+

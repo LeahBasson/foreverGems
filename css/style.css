@@ -796,6 +796,7 @@ th, td{
     width: 91vw;
     margin: auto;
     margin-top: 2rem;
+    background-color: var(--secondary);
 }
 
 .adminImages{
@@ -819,6 +820,10 @@ th, td{
     color: var(--secondary);
     border: 1px solid var(--secondary);
     border-radius: 0.5rem;
+}
+
+#addProductForm #name_error,#category_error{
+    display: none;
 }
 
 /*---------------------------------------------- Contact Page -----------------------------------------------------*/
@@ -920,10 +925,18 @@ th, td{
     width: 6rem;
 }
 
+
+.checkoutTable{
+    margin-left: 3.5rem;
+    width: 70vw;
+    background-color: var(--secondary);
+}
+
 .finalTotal{
     display: flex;
     margin-left: 4rem;
     color: var(--primary);
+    margin-top: 2rem;
 }
 
 .btncheckout{
@@ -939,8 +952,7 @@ th, td{
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/
 @media (width < 999px)
-{
-    
+{ 
     /* Nav Section*/
     img[alt='logo']{
         width: 12rem;
@@ -1252,6 +1264,56 @@ img[alt="aboutImage1"]{
     font-size: 4rem;
 }
 
+.adminImages{
+    width: 6rem;
+}
+
+.tableContainer{
+    width: 84vw;
+}
+
+.tableContainer table, thead, tbody, th, td, tr {
+    display: block;
+}
+
+.tableContainer table {
+    margin-bottom: 5rem;
+}
+
+.tableContainer thead tr {
+    display: none;
+}
+
+.tableContainer tr {
+    margin-bottom: 15px;
+}
+
+.tableContainer td {
+    position: relative;
+    padding-left: 50%;
+}
+
+.tableContainer td:before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+
+.tableContainer td:nth-of-type(1):before { content: "Product Name"; }
+.tableContainer td:nth-of-type(2):before { content: "Category"; }
+.tableContainer td:nth-of-type(3):before { content: "Image"; }
+.tableContainer td:nth-of-type(4):before { content: "Material"; }
+.tableContainer td:nth-of-type(5):before { content: "Amount"; }
+.tableContainer td:nth-of-type(6):before { content: "Action"; }
+.tableContainer .total-row td:before { content: ""; }
+.tableContainer .total-row td:before { content: ""; }
+
+
+
 /*----------------------------------------- Contact Page Responsive ---------------------------------------------------*/
 .contact{
     display: flex;
@@ -1403,31 +1465,59 @@ img[alt="footerLogo"]{
 }
 
 .cartHeading h1{
-    font-size: 1rem;
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
 }
 
-.tableContainer table, thead, tbody, th, td, tr {
-    display: block;
-}
-
-.tableContainer table {
-    margin-bottom: 5rem;
-}
-
-.tableContainer thead tr {
+.checkoutTr{
     display: none;
 }
 
-.tableContainer tr {
+.checkoutTable{
+    width: 84vw;
+    margin-left: 0;
+    margin: auto;
+}
+
+.finalTotal{
+    display: flex;
+    margin-left: 0;
+    color: var(--primary);
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btncheckout{
+    width: 80vw;
+    margin-left: 0;
+    margin-top: 2rem;
+    margin: auto;
+}
+
+.checkoutTable table, thead, tbody, th, td, tr {
+    display: block;
+}
+
+.checkoutTable table {
+    margin-bottom: 5rem;
+}
+
+.checkoutTable thead tr {
+    display: none;
+}
+
+.checkoutTable tr {
     margin-bottom: 15px;
 }
 
-.tableContainer td {
+.checkoutTable td {
     position: relative;
     padding-left: 50%;
 }
 
-.tableContainer td:before {
+.checkoutTable td:before {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -1437,34 +1527,16 @@ img[alt="footerLogo"]{
     transform: translateY(-50%);
 }
 
-.tableContainer td:nth-of-type(1):before { content: "Product Name"; }
-.tableContainer td:nth-of-type(2):before { content: "Category"; }
-.tableContainer td:nth-of-type(3):before { content: "Image"; }
-.tableContainer td:nth-of-type(4):before { content: "Material"; }
-.tableContainer td:nth-of-type(5):before { content: "Amount"; }
-.tableContainer td:nth-of-type(6):before { content: "Action"; }
-.tableContainer .total-row td:before { content: ""; }
-.tableContainer .total-row td:before { content: ""; }
+.checkoutTable td:nth-of-type(1):before { content: "Product Name"; }
+.checkoutTable td:nth-of-type(2):before { content: "Image"; }
+.checkoutTable td:nth-of-type(3):before { content: "Category"; }
+.checkoutTable td:nth-of-type(4):before { content: "Quantity"; }
+.checkoutTable td:nth-of-type(5):before { content: "Amount"; }
+.checkoutTable td:nth-of-type(6):before { content: "Total"; }
+.checkoutTable .total-row td:before { content: ""; }
+.checkoutTable .total-row td:before { content: ""; }
 
-.finalTotal{
-    display: flex;
-    margin-left: 4rem;
-    color: var(--primary);
+/*End of Media Query*/
 }
-
-.btncheckout{
-    width: 40vw;
-    margin-left: 3.5rem;
-    margin-top: 1rem;
-}
-
-/*---------------------------------------- Admin Page Responsive --------------------------------------------------------------*/
-.adminImages{
-    width: 6rem;
-}
-
-.tableContainer{
-    width: 84vw;
-}
-
-}
+    
+    

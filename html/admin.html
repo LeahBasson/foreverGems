@@ -73,6 +73,7 @@
               <button type="button" class="btn btnAddNewProducts" id="saveProduct" data-bs-toggle="modal" data-bs-target="#addProductModal">
                 ADD NEW PRODUCT
               </button>
+              </div>
               <!-- Add New Product Modal -->
               <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -82,27 +83,31 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form id="addProductForm">
+                      <form id="addProductForm" name="addProductForm">
                         <div class="mb-3">
-                          <label for="productName" class="form-label">Product Name</label>
-                          <input type="text" class="form-control" id="productName" required>
+                          <label for="productName" class="form-label ms-auto">Product Name</label>
+                          <input type="text" class="form-control" id="productName" placeholder="Enter a product name">
                         </div>
                         <div class="mb-3">
                           <label for="productCategory" class="form-label">Product Category</label>
-                          <input type="text" class="form-control" id="productCategory">
-                        </div>
-                        <div class="mb-3">
-                          <label for="productImage" class="form-label">Product Image</label>
-                          <input type="text" class="form-control" id="productImage">
+                          <input type="text" class="form-control" id="productCategory" placeholder="Enter a product category">
                         </div>
                         <div class="mb-3">
                           <label for="productMaterial" class="form-label">Product Material</label>
-                          <input type="text" class="form-control" id="productMaterial">
+                          <input type="text" class="form-control" id="productMaterial" placeholder="Enter your product material">
                         </div>
                         <div class="mb-3">
                           <label for="productAmount" class="form-label">Product Amount</label>
-                          <input type="number" class="form-control" id="productAmount">
+                          <input type="number" class="form-control" id="productAmount" placeholder="Enter the product amount">
                         </div>
+                        <div class="mb-3">
+                          <label for="productGender" class="form-label">Product Gender</label>
+                          <input type="text" class="form-control" id="productGender" placeholder="Enter the product gender">
+                        </div>
+                        <div class="mb-3">
+                          <label for="productImage" class="form-label">Product Image</label>
+                          <input type="text" class="form-control" id="productImage" placeholder="Enter the product image url">
+                        </div> 
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -112,12 +117,8 @@
                   </div>
                 </div>
               </div>
-          </div>
 
-
-            </div>
-
-
+        
             <div class="spinnerDiv"></div>
            
             <div class="tableContainer">
