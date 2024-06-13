@@ -13,62 +13,120 @@ document.querySelector('[currentYear]').textContent =
         ? JSON.parse(localStorage.getItem('checkout'))
         : []
 
-        function displayProducts(args) {
-            container.innerHTML = ""
-            try {
-                args.forEach(product => {
-                    container.innerHTML += `
-                         <tr>
-                    <td>${product.productName}</td>
-                    <td>${product.category}</td>
-                    <td><img class="adminImages" src = '${product.img_url}'></td>
-                    <td>${product.Material}</td>
-                    <td>R${product.Amount}</td>
-                    <td><button class="btnEdit" >EDIT</button>
-                    <button class="btnDelete" >DELETE</button>
-                    </td>
-                    </tr>
-                    `
-                })
-        
-            } catch (e) {
-                container.innerHTML =`<div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-            </div>`
-            }
-        }
-        displayProducts(products)
 
-      
-        // Sort alphabetically by product name 
-        let isToggle = false;
-        sortingAlphabetically.addEventListener('click', () => {
-    try {
-        if (!products) throw new Error('Please try again later');
-        if (!isToggle) {
-          
-          // Sort by product name in ascending order (A to Z)
-            products.sort((a, b) => a.productName.localeCompare(b.productName));
-            sortingAlphabetically.textContent = 'NAME: A TO Z';
-            isToggle = true;
-        } else {
-            // Sort by product name in descending order (Z to A)
-            products.sort((a, b) => b.productName.localeCompare(a.productName));
-            sortingAlphabetically.textContent = 'NAME: Z TO A';
-            isToggle = false;
-        }
+
+// Delete Function
+function deleteProduct(index){
+    try{
+        products.splice(index, 1);
+        localStorage.setItem('products', JSON.stringify(products));
         displayProducts(products);
-    } catch (e) {
-        container.textContent = e.message || 'We are working on this issue';
+        location.reload();
+    } catch(e) {
+        alert('Unable to Delete');
+    }
+}
+
+
+
+function displayProducts(args) {
+    container.innerHTML = "";
+    try {
+        args.forEach((product, i) => {
+            container.innerHTML += `
+            <tr>
+            <td>${product.productName}</td>
+            <td>${product.category}</td>
+            <td><img class="adminImages" src ='${product.img_url}'></td>
+            <td>${product.Material}</td>
+            <td>R${product.Amount}</td>
+            <td>
+            <div>
+                <div class="buttons">
+                <button class="btnEdit" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}">Edit</button>
+                <button class="btnDelete" onclick="deleteProduct(${i})">Delete</button>
+                </div>
+                <div class="modal fade" id="updateProduct${product.id}" tabindex="-1" aria-labelledby="updateProduct${product.id}" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="updateProduct${product.id}">Update Product</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                      <div class="container">
+                      <input class="form-control m-2" type="text" placeholder="Enter a Product Name" value="${product.productName}" name ="admin-name" id="admin-name${product.id}" required>
+                      <input class="form-control m-2" type="text" placeholder="Enter a Product Name" value="${product.category}" name ="admin-name" id="admin-name${product.id}" required>
+                      <input class="form-control m-2" type="text" placeholder="Enter Image URL" value="${product.img_url}" name="admin-image" id="admin-image${product.id}" required>
+                      <textarea class="form-control m-2" placeholder="Enter your Product details" required name="admin-details" id="admin-details${product.id}">${product.Material}</textarea>
+                      <input class="form-control m-2" type="number" placeholder="Enter the Product Amount" value="${product.Amount}" name="admin-amount" id="admin-amount${product.id}" required>
+                      </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-secondary" onclick='UpdateProduct(${JSON.stringify(product)}, ${i})'>Save changes</button>
+                    </div>
+                  </div>
+                    </div>
+                </div>
+            </div>
+            </td>
+        </tr>
+        `;
+        })
+    } catch(e) {
+        tableContent.innerHTML = `
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <p>No Products Found</p>
+            </div>
+        </div>
+        `;
+    }
+}
+displayProducts(products)
+
+
+document.getElementById('saveNewProduct').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the form from submitting normally
+    try{
+        // Creates a new product from the form values
+        let newProduct = {
+            productName: document.querySelector('#productName').value,
+            category: document.querySelector('#productCategory').value,
+            img_url: document.querySelector('#productImage').value,
+            Material: document.querySelector('#productMaterial').value,
+            Amount: document.querySelector('#productAmount').value,    
+        };
+        // Adds the new product to the sweetProducts array
+        products.push(newProduct);
+        // Updates localStorage with the new list of products
+        localStorage.setItem('products', JSON.stringify(products));
+        // Updates the display of products
+        displayProducts(products);
+        // Clears the form fields
+        document.querySelector('#productName').value = '';
+        document.querySelector('#productCategory').value = '';
+        document.querySelector('#productImage').value = '';
+        document.querySelector('#productMaterial').value = '';
+        document.querySelector('#productAmount').value = '';
+        // Close the modal
+        var myModalEl = document.getElementById('addProductModal');
+        var modal = bootstrap.Modal.getInstance(myModalEl);
+        modal.hide();
+    } catch(e) {
+        alert('Unable to add new product');
     }
 });
-     
 
-         // Function to validate footer form fields
+
+
+         // Function to validate footer form field
 function validateFooterForm() {
     let footerForm = document.forms["footerForm"];
     let footerEmail = footerForm["footerEmail"].value;
-    // ... other validations for the footer form
   
     if (footerEmail === "") {
         document.getElementById("footer_error").innerHTML = "Please enter your email address";

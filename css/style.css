@@ -793,7 +793,7 @@ th, td{
 }
 
 .tableContainer{
-    width: 93vw;
+    width: 91vw;
     margin: auto;
     margin-top: 2rem;
 }
@@ -918,10 +918,6 @@ th, td{
 /*---------------------------------------- Checkout Page --------------------------------------------------------------*/
 .checkoutImages{
     width: 6rem;
-}
-
-#checkoutTable{
-    width: 90vw;
 }
 
 .finalTotal{
@@ -1399,6 +1395,71 @@ img[alt="footerLogo"]{
 }
 .copyRightSection{
     text-align: center;
+}
+
+/*---------------------------------------- Checkout Page Responsive --------------------------------------------------------------*/
+.checkoutImages{
+    width: 3rem;
+}
+
+.cartHeading h1{
+    font-size: 1rem;
+}
+
+table, thead, tbody, th, td, tr {
+    display: block;
+}
+table {
+    margin-bottom: 5rem;
+}
+thead tr {
+    display: none;
+}
+tr {
+    margin-bottom: 15px;
+}
+td {
+    position: relative;
+    padding-left: 50%;
+}
+td:before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+td:nth-of-type(1):before { content: "Product Name"; }
+td:nth-of-type(2):before { content: "Category"; }
+td:nth-of-type(3):before { content: "Image"; }
+td:nth-of-type(4):before { content: "Material"; }
+td:nth-of-type(5):before { content: "Quantity"; } /* Change to Quantity */
+td:nth-of-type(6):before { content: "Price"; }
+td:nth-of-type(7):before { content: "Action"; }
+.total-row td:before { content: ""; }
+.total-row td:before { content: ""; }
+
+.finalTotal{
+    display: flex;
+    margin-left: 4rem;
+    color: var(--primary);
+}
+
+.btncheckout{
+    width: 40vw;
+    margin-left: 3.5rem;
+    margin-top: 1rem;
+}
+
+/*---------------------------------------- Admin Page Responsive --------------------------------------------------------------*/
+.adminImages{
+    width: 6rem;
+}
+
+.tableContainer{
+    width: 84vw;
 }
 
 }

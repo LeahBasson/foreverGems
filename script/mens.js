@@ -42,7 +42,7 @@ document.querySelector('[currentYear]').textContent =
                 
         
             } catch (e) {
-                console.log(7)
+                container.textContent = e.message || 'Please try again later';
             }
         }
         displayProducts(manProducts);
