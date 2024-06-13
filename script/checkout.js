@@ -51,10 +51,10 @@ function cartItems() {
 
       try{
         tableContent +=
-          `<tr>
+          `<tr >
               <td>${product.productName}</td>
               <td><img class="checkoutImages" src="${product.img_url}" alt="${product.productName}"></td>
-              <td>${product.Material}</td>
+              <td>${product.category}</td>
               <td>${quantity}</td>
               <td>R${product.Amount}</td>
               <td>R${total}</td>
@@ -78,10 +78,13 @@ function cartItems() {
 // Call the cartItems function
 cartItems();
 
+
+//Purchase button
 document.querySelector('[purchase]').addEventListener('click', () => {
   alert("Thank you for purchasing");
 })
 
+//Clear
 document.querySelector('[clear]').addEventListener('click', () => {
   // Clear the cart and update local storage
   cart = []; // Clear the cart

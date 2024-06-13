@@ -3,7 +3,6 @@ document.querySelector('[currentYear]').textContent =
     new Date().getUTCFullYear()
 
 
-
 // Function to validate form fields
 function validateForm() {
     let form = document.forms["myForm"];
@@ -60,11 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  // Function to validate footer form fields
+  // Function to validate footer form field
 function validateFooterForm() {
     let footerForm = document.forms["footerForm"];
     let footerEmail = footerForm["footerEmail"].value;
-    // ... other validations for the footer form
   
     if (footerEmail === "") {
         document.getElementById("footer_error").innerHTML = "Please enter your email address";
@@ -87,6 +85,7 @@ function validateFooterForm() {
       event.target.submit();
     }
   });
+
 
  // Counter
 window.onload = () => {

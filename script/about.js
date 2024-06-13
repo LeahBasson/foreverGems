@@ -2,11 +2,10 @@
 document.querySelector('[currentYear]').textContent =
     new Date().getUTCFullYear()  
 
-     // Function to validate footer form fields
+     // Function to validate footer form field
 function validateFooterForm() {
     let footerForm = document.forms["footerForm"];
     let footerEmail = footerForm["footerEmail"].value;
-    // ... other validations for the footer form
   
     if (footerEmail === "") {
         document.getElementById("footer_error").innerHTML = "Please enter your email address";
