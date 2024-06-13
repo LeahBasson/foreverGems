@@ -1406,23 +1406,28 @@ img[alt="footerLogo"]{
     font-size: 1rem;
 }
 
-table, thead, tbody, th, td, tr {
+.tableContainer table, thead, tbody, th, td, tr {
     display: block;
 }
-table {
+
+.tableContainer table {
     margin-bottom: 5rem;
 }
-thead tr {
+
+.tableContainer thead tr {
     display: none;
 }
-tr {
+
+.tableContainer tr {
     margin-bottom: 15px;
 }
-td {
+
+.tableContainer td {
     position: relative;
     padding-left: 50%;
 }
-td:before {
+
+.tableContainer td:before {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -1431,15 +1436,15 @@ td:before {
     white-space: nowrap;
     transform: translateY(-50%);
 }
-td:nth-of-type(1):before { content: "Product Name"; }
-td:nth-of-type(2):before { content: "Category"; }
-td:nth-of-type(3):before { content: "Image"; }
-td:nth-of-type(4):before { content: "Material"; }
-td:nth-of-type(5):before { content: "Quantity"; } /* Change to Quantity */
-td:nth-of-type(6):before { content: "Price"; }
-td:nth-of-type(7):before { content: "Action"; }
-.total-row td:before { content: ""; }
-.total-row td:before { content: ""; }
+
+.tableContainer td:nth-of-type(1):before { content: "Product Name"; }
+.tableContainer td:nth-of-type(2):before { content: "Category"; }
+.tableContainer td:nth-of-type(3):before { content: "Image"; }
+.tableContainer td:nth-of-type(4):before { content: "Material"; }
+.tableContainer td:nth-of-type(5):before { content: "Amount"; }
+.tableContainer td:nth-of-type(6):before { content: "Action"; }
+.tableContainer .total-row td:before { content: ""; }
+.tableContainer .total-row td:before { content: ""; }
 
 .finalTotal{
     display: flex;
