@@ -730,7 +730,7 @@ img[alt="aboutImage1"]{
     border: 1px solid var(--secondary);
 }
 
-.btnAddToCart:hover{
+.btnAddToCart:hover,.btnAddToCart:active{
     background-color: var(--alternative);
     color: var(--secondary);
     border: 1px solid var(--secondary);
@@ -913,6 +913,32 @@ th, td{
 
 .contact-label{
     color: var(--primary);
+}
+
+/*---------------------------------------- Checkout Page --------------------------------------------------------------*/
+.checkoutImages{
+    width: 6rem;
+}
+
+#checkoutTable{
+    width: 90vw;
+}
+
+.finalTotal{
+    display: flex;
+    margin-left: 4rem;
+    color: var(--primary);
+}
+
+.btncheckout{
+    padding: 0.5rem 1.5rem;
+    width: 10vw;
+    margin-left: 3.5rem;
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
 }
 
 /*---------------------------------------- Media query --------------------------------------------------------------*/

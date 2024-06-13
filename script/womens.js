@@ -50,8 +50,7 @@ document.querySelector('[currentYear]').textContent =
         document.addEventListener('DOMContentLoaded', (event) => { 
             let searchInput = document.getElementById('searchInput');
             let container = document.getElementById('container');
-            let products = womanProducts; // Ensure this is the correct reference to your products array
-        
+            let products = womanProducts; 
             searchInput.addEventListener('input', () => {
                 let searchValue = searchInput.value.trim();
                 let isPlaceholderShowing = searchValue === '';
@@ -98,8 +97,6 @@ sortingByAmount.addEventListener('click', () => {
 })
 
 
-
-
 // Category Filter
 const categoryLinks = document.querySelectorAll('.nav-link'); 
 
@@ -113,51 +110,32 @@ categoryLinks.forEach((link) => {
     });
 });
 
-// Display products (similar to existing displayProducts function)
-function displayProducts(args) {
-    container.innerHTML = ''; // Clear existing content
+
+// Add to cart
+let womensCart = JSON.parse(localStorage.getItem('checkout')) || [];
+function addToCart(product) {
     try {
-        args.forEach((product) => {
-            container.innerHTML += `
-              <div class="card">
-                            <img src="${product.img_url}" class="card-img-top" alt="${product.productName}" loading='lazy'>
-                            <div class="card-body">
-                                <h5 class="card-title">${product.productName}</h5>
-                                <p class="card-text">${product.Material}</p>
-                                <p class="card-text">
-                                    <span class="shadow amount fw-bold">Amount</span>
-                                    R${product.Amount}
-                                </p>
-                                <button type='button' class="btn btnAddToCart" onclick='addToCart(${JSON.stringify(product)})'>Add to cart</button>
-                            </div>
-                        </div>
-            `;
-        });
+        womensCart.push(product);
+        localStorage.setItem('checkout', JSON.stringify(womensCart));
+        document.querySelector('[counter]').textContent = JSON.parse(localStorage.getItem('checkout'))
+        ? JSON.parse(localStorage.getItem('checkout')).length
+        : 0
     } catch (e) {
-        console.error('Error displaying products:', e.message);
+        alert('The Checkout is under maintenance');
     }
 }
 
-         // Add to cart
-        function addToCart(product) {
-            try {
-                checkoutItems.push(product)
-                localStorage.setItem('checkout', JSON.stringify(checkoutItems))
-                document.querySelector('[counter]').textContent = checkoutItems.length || 0
-            } catch (e) {
-                alert("Unable to add to cart")
-            }
-        }
-        window.onload = () => {
-            document.querySelector('[counter]').textContent = checkoutItems.length || 0
-        }
+// Counter
+window.onload = () => {
+    document.querySelector('[counter]').textContent = JSON.parse(localStorage.getItem('checkout'))
+        ? JSON.parse(localStorage.getItem('checkout')).length
+        : 0
+}
 
-
-        // Function to validate footer form fields
+        // Function to validate footer form field
 function validateFooterForm() {
     let footerForm = document.forms["footerForm"];
     let footerEmail = footerForm["footerEmail"].value;
-    // ... other validations for the footer form
   
     if (footerEmail === "") {
         document.getElementById("footer_error").innerHTML = "Please enter your email address";
@@ -180,3 +158,6 @@ function validateFooterForm() {
       event.target.submit();
     }
   });
+
+
+ 

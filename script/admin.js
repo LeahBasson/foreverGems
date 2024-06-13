@@ -32,7 +32,7 @@ document.querySelector('[currentYear]').textContent =
                 })
         
             } catch (e) {
-                container.innerHTML +=`<div class="spinner-border" role="status">
+                container.innerHTML =`<div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
             </div>`
             }
@@ -62,9 +62,7 @@ document.querySelector('[currentYear]').textContent =
         container.textContent = e.message || 'We are working on this issue';
     }
 });
-
-        
-        
+     
 
          // Function to validate footer form fields
 function validateFooterForm() {
@@ -93,3 +91,10 @@ function validateFooterForm() {
       event.target.submit();
     }
   });
+
+  // Counter
+window.onload = () => {
+    document.querySelector('[counter]').textContent = JSON.parse(localStorage.getItem('checkout'))
+        ? JSON.parse(localStorage.getItem('checkout')).length
+        : 0
+}
