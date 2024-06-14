@@ -85,6 +85,8 @@ document.querySelector('[purchase]').addEventListener('click', () => {
   alert("Thank you for purchasing");
 })
 
+
+
 //Clear
 document.querySelector('[clear]').addEventListener('click', () => {
   // Clear the cart and update local storage
@@ -93,6 +95,8 @@ document.querySelector('[clear]').addEventListener('click', () => {
   cartItems(); // Update the cart display
   document.querySelector('#total-container').style.display = 'none'; // Hide the amount due
 });
+
+
 
   // Get the footer form element
   let footerForm = document.forms["footerForm"];
@@ -104,6 +108,8 @@ document.querySelector('[clear]').addEventListener('click', () => {
       event.target.submit();
     }
   });
+
+
 
   //Counter
   window.onload = () => {
