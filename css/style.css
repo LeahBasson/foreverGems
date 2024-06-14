@@ -832,6 +832,15 @@ th, td{
     display: none;
 }
 
+.btnModal{
+    padding: 0.5rem 2.1rem;
+    background-color: var(--alternative);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+    border-radius: 0.5rem;
+    width: 14vw;
+    margin: auto;
+}
 /*---------------------------------------------- Contact Page -----------------------------------------------------*/
 .contactBannerImage{
     position: relative;
@@ -1324,7 +1333,10 @@ img[alt="aboutImage1"]{
 .tableContainer .total-row td:before { content: ""; }
 .tableContainer .total-row td:before { content: ""; }
 
-
+.btnModal{
+    width: 75vw;
+    margin: auto;
+}
 
 /*----------------------------------------- Contact Page Responsive ---------------------------------------------------*/
 .contact{
