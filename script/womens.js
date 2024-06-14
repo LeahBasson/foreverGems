@@ -125,7 +125,7 @@ function addToCart(product) {
     }
 }
 
-// Counter
+// Counter                                                  
 window.onload = () => {
     document.querySelector('[counter]').textContent = JSON.parse(localStorage.getItem('checkout'))
         ? JSON.parse(localStorage.getItem('checkout')).length

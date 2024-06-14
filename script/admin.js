@@ -86,7 +86,7 @@ function displayProducts(args) {
 }
 displayProducts(products)
 
-// Edit Button Functionality & has to be placed outside the global scope
+// Edit Functionality
 function UpdateProduct(index){
 try{
     let product = products[index];
@@ -109,10 +109,8 @@ try{
 }
 
 
-
-
 document.getElementById('saveNewProduct').addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault(); // Prevent the form from submitting 
 
     // Get form input values
     const productName = document.querySelector('#productName').value.trim();

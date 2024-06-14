@@ -70,11 +70,9 @@ img[alt='logo']{
 
 /* Override hover effect for dropdown items */
 .nav-item .dropdown-item:hover {
-    /* Set the properties to the desired values on hover */
-    color: inherit; /* or any other color */
-    background-color: transparent; /* or any other color */
-    text-decoration: none; /* if there's an underline effect */
-    /* Add any other properties that are being changed on hover */
+    color: inherit; 
+    background-color: transparent;
+    text-decoration: none; 
 }
 
 .navbar-nav .nav-link{
@@ -156,6 +154,23 @@ section {
     background-position: center; 
 }
 
+.btnShopNowWomens{
+    padding: 0.5rem 1.3rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.btnShopNowMens{
+    padding: 0.5rem 1.3rem;
+    background-color: var(--alternative);
+    border: 1px solid white;
+    border-radius: 0.4rem;
+}
+
+
 #home{
     position: relative;
     z-index: 0;
@@ -219,15 +234,7 @@ section {
 .cicrleContainer{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 3rem;
-}
-
-.categoryCircles a{
-    text-decoration: none;
-}
-
-.categoryCircles h3:hover{
-   color: var(--alternative);
+    margin-bottom: 1rem;
 }
 
 .categoryCircles h3{
@@ -320,7 +327,6 @@ section {
     background-color: var(--alternative);
     border: 1px solid white;
     margin-left: 1rem;
-    margin-bottom: 2rem;
     border-radius: 0.4rem;
     margin-top: 4rem;
 }
@@ -982,6 +988,12 @@ th, td{
         font-size: 4rem;
     }
 
+    
+    .btnShopNowWomens{
+        margin-top: 0;
+         margin-bottom: 3rem;
+    } 
+
     .homeText{
         margin: 8rem auto 8rem;
     }
@@ -1007,7 +1019,7 @@ th, td{
         justify-content: center;
         flex-direction: column;
         justify-content: space-around;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
    
     .categoryCircles h3{
