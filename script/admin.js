@@ -11,8 +11,6 @@ document.querySelector('[currentYear]').textContent =
         ? JSON.parse(localStorage.getItem('checkout'))
         : []
 
-
-
 // Delete Function
 function deleteProduct(index){
     try{
@@ -25,72 +23,92 @@ function deleteProduct(index){
     }
 }
 
-//Edit functionality
-
-
-
 function displayProducts(args) {
-    container.innerHTML = "";
-    try {
-        args.forEach((product, i) => {
-            container.innerHTML += `
-            <tr>
-            <td>${product.productName}</td>
-            <td>${product.category}</td>
-            <td><img class="adminImages" src ='${product.img_url}'></td>
-            <td>${product.Material}</td>
-            <td>R${product.Amount}</td>
-            <td>
-            <div>
-                <div class="buttons">
-                <button class="btnEdit" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}">EDIT</button>
-                <button class="btnDelete" onclick="deleteProduct(${i})">DELETE</button>
-                </div>
+  container.innerHTML = "";
+  try {
+      args.forEach((product, i) => {
+          container.innerHTML += `
+          <tr>
+          <td>${product.productName}</td>
+          <td>${product.category}</td>
+          <td><img class="adminImages" src ='${product.img_url}'></td>
+          <td>${product.Material}</td>
+          <td>R${product.Amount}</td>
+          <td>
+          <div>
+              <div class="buttons">
+              <button class="btnEdit" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}" >EDIT</button>
+              <button class="btnDelete" onclick="deleteProduct(${i})">DELETE</button>
+              </div>
 
-                <div class="modal fade" id="updateProduct${product.id}" tabindex="-1" aria-labelledby="updateProduct${product.id}" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="updateProduct${product.id}">UPDATE PRODUCT</h1>
+              <div class="modal fade" id="updateProduct${product.id}" tabindex="-1" aria-labelledby="updateProduct${product.id}" aria-hidden="true">
+                  <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="updateProduct${product.id}">UPDATE PRODUCT</h1>
 
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                      <div class="container">
- 
-                      <input class="form-control m-2" type="text"  value="${product.productName}" name ="admin-name" id="admin-name${product.id}">
-                      <input class="form-control m-2" type="text" value="${product.category}" name ="admin-name" id="admin-name${product.id}" >
-                      <textarea class="form-control m-2" name="admin-details" id="admin-details${product.id}">${product.Material}</textarea>
-                      <input class="form-control m-2" type="number" value="${product.Amount}" name="admin-amount" id="admin-amount${product.id}">
-                      <input class="form-control m-2" type="text" value="${product.gender}" name ="admin-name" id="admin-name${product.id}">
-                      <input class="form-control m-2" type="text" value="${product.img_url}" name ="admin-name" id="admin-name${product.id}">
-                      </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-secondary" onclick='UpdateProduct(${JSON.stringify(product)}, ${i})'>Save changes</button>
-                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
+                  <div class="modal-body">
+                    <form>
+                    <div class="container">
+
+                    <input class="form-control m-2" type="text"  value="${product.productName}" name ="admin-name" id="admin-name${product.id}">
+                    <input class="form-control m-2" type="text" value="${product.category}" name ="admin-category" id="admin-category${product.id}" >
+                    <textarea class="form-control m-2" name="admin-material" id="admin-material${product.id}">${product.Material}</textarea>
+                    <input class="form-control m-2" type="number" value="${product.Amount}" name="admin-amount" id="admin-amount${product.id}">
+                    <input class="form-control m-2" type="text" value="${product.gender}" name ="admin-gender" id="admin-gender${product.id}">
+                    <input class="form-control m-2" type="text" value="${product.img_url}" name ="admin-img_url" id="admin-img_url${product.id}">
                     </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" onclick='UpdateProduct(${i})'>Save changes</button>
+                  </div>
                 </div>
-            </div>
-            </td>
-        </tr>
-        `;
-        })
-    } catch(e) {
-        tableContent.innerHTML = `
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <p>No Products Found</p>
-            </div>
-        </div>
-        `;
-    }
+                  </div>
+              </div>
+          </div>
+          </td>
+      </tr>
+      `;
+      })
+  } catch(e) {
+      tableContent.innerHTML = `
+      <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+              <p>No Products Found</p>
+          </div>
+      </div>
+      `;
+  }
 }
 displayProducts(products)
+
+// Edit Button Functionality & has to be placed outside the global scope
+function UpdateProduct(index){
+try{
+    let product = products[index];
+    // taps into the index to target the elements for the specific product
+    product.productName = document.querySelector(`#admin-name${product.id}`).value;
+    product.category = document.querySelector(`#admin-category${product.id}`).value;
+    product.Material = document.querySelector(`#admin-material${product.id}`).value;
+    product.Amount = document.querySelector(`#admin-amount${product.id}`).value;
+    product.gender = document.querySelector(`#admin-gender${product.id}`).value;
+    product.img_url = document.querySelector(`#admin-img_url${product.id}`).value;
+    // Updates the product in the array
+    products[index] = Object.assign({}, product);
+    // Updates localStorage with the new list of products
+    localStorage.setItem('products', JSON.stringify(products));
+    displayProducts(products);
+    location.reload();
+} catch(e) {
+    alert('Unable to Edit the Products');
+}
+}
+
+
 
 
 document.getElementById('saveNewProduct').addEventListener('click', (event) => {
@@ -141,9 +159,6 @@ document.getElementById('saveNewProduct').addEventListener('click', (event) => {
         alert('Please fill in all required fields.');
     }
 });
-
-
-
 
          // Function to validate footer form field
 function validateFooterForm() {
