@@ -935,6 +935,13 @@ th, td{
     color: var(--primary);
 }
 
+.contact-button{
+    width: 46vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 /*---------------------------------------- Checkout Page --------------------------------------------------------------*/
 .checkoutImages{
     width: 6rem;
@@ -1197,6 +1204,10 @@ img[alt="aboutImage1"]{
     font-size: 1rem;
 }
 
+.offcanvas-header{
+    margin: auto;
+}
+
 /*Womens Filter Section*/
 .womensFilterSection{
     display: flex;
@@ -1373,6 +1384,13 @@ img[alt="aboutImage1"]{
 .form-control{
     background-color: var(--secondary);
     border: 1px solid var(--alternative);
+}
+
+.contact-button{
+    width: 81%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
     
      /* Footer Section */
